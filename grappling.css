@@ -1,4 +1,6 @@
-
+/* Color Palette: Red (#CC0000), Black (#000000), White (#FFFFFF) 
+   Topic: Submission Grappling
+*/
 
 * {
     box-sizing: border-box;
@@ -30,6 +32,10 @@ header a {
     color: #FFFFFF;
 }
 
+header a:hover {
+    color: #CC0000;
+}
+
 h1 {
     margin: 0;
     font-size: 2em;
@@ -37,7 +43,7 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Mobile-First Navigation */
+/* Navigation Styling */
 nav {
     font-weight: bold;
     background-color: #f4f4f4;
@@ -66,15 +72,15 @@ nav a:hover {
     color: #FFFFFF;
 }
 
-/* Hero Image Area */
+/* Hero Section using your Grappling image */
 #homehero {
-    height: 300px;
-    background-color: #222;
-    background-image: url(homehero.jpg); /* Place an image in your folder named homehero.jpg */
+    height: 450px;
+    background-color: #111111;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(homehero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    border-bottom: 2px solid #000;
+    background-position: center 25%;
+    border-bottom: 4px solid #CC0000;
 }
 
 main {
@@ -84,10 +90,10 @@ main {
 h2 { color: #CC0000; }
 .brand { color: #CC0000; font-weight: bold; }
 
-/* 6-Card Grid System */
+/* 6-Card Grid Layout from Sketch */
 #info-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Stacked on mobile */
+    grid-template-columns: 1fr; /* Default mobile view */
     gap: 20px;
     margin: 2em 0;
 }
@@ -103,6 +109,7 @@ h2 { color: #CC0000; }
     margin-top: 0;
     font-size: 0.9em;
     text-transform: uppercase;
+    color: #000000;
 }
 
 .red-line {
@@ -112,34 +119,41 @@ h2 { color: #CC0000; }
     margin-top: 10px;
 }
 
+#contact {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 2em;
+}
+
 footer {
     font-size: 0.75em;
     font-style: italic;
     text-align: center;
     padding: 2em;
-    background-color: #000;
-    color: #FFF;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 footer a { color: #CC0000; text-decoration: none; }
 
-/* Tablet View (min-width: 600px) */
+/* Media Query for Tablet View */
 @media (min-width: 600px) {
     nav ul {
         display: flex;
+        flex-flow: row nowrap;
         justify-content: space-around;
     }
     nav li { border-bottom: none; }
     #info-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Desktop View (min-width: 1024px) */
+/* Media Query for Desktop View (Advanced Grid) */
 @media (min-width: 1024px) {
     #wrapper {
         width: 85%;
         margin: 20px auto;
-        border: 2px solid #000;
-        box-shadow: 5px 5px 15px #333;
+        border: 2px solid #000000;
+        box-shadow: 5px 5px 15px #333333;
         display: grid;
         grid-template-columns: 200px auto;
         grid-template-areas:
@@ -150,11 +164,12 @@ footer a { color: #CC0000; text-decoration: none; }
     }
 
     header { grid-area: header; }
-    nav    { grid-area: nav; text-align: left; padding: 1em; border-right: 1px solid #000; background-color: #FFF; }
-    main   { grid-area: main; background-color: #FFF; }
+    nav    { grid-area: nav; text-align: left; padding: 1em; border-right: 1px solid #000; background-color: #FFFFFF; }
+    main   { grid-area: main; background-color: #FFFFFF; }
     #homehero { grid-area: hero; }
     footer { grid-area: footer; }
 
     nav ul { flex-direction: column; }
-    #info-grid { grid-template-columns: repeat(3, 1fr); } /* 3 Columns exactly like sketch */
+    nav li { border-bottom: 1px solid #f4f4f4; }
+    #info-grid { grid-template-columns: repeat(3, 1fr); } /* 3 Columns like the sketch */
 }
