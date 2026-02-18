@@ -1,0 +1,140 @@
+/* Color Palette & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a; /* Black */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #000;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+nav {
+    border-top: 2px solid #e63946; /* Red */
+    border-bottom: 2px solid #e63946;
+    background: #fff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    border-right: 1px solid #1a1a1a;
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #e63946;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    border: 3px solid #e63946;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Grid Section */
+.info-grid {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    color: #1a1a1a;
+    padding: 20px;
+    border-radius: 4px;
+    border-bottom: 5px solid #e63946;
+    min-height: 150px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #e63946;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #e63946;
+    margin-top: 40px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+}
