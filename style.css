@@ -1,140 +1,178 @@
-/* Color Palette & Reset */
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #1a1a1a; /* Black */
-    color: #ffffff;
-    line-height: 1.6;
+    background-color: #FFFFFF;
+    color: #666666;
+    font-family: Verdana, Arial, sans-serif;
+    margin: 0;
 }
 
-/* Header & Nav */
+#wrapper {
+    background-color: #FFFFFF;
+    width: 100%;
+    margin: 0;
+}
+
 header {
+    background-color: #000000; /* Black */
+    color: #FFFFFF;
+    background-image: url(logo_accent.jpg); /* Optional logo background */
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    padding: 1em;
     text-align: center;
-    padding: 20px 0;
-    background-color: #000;
+    border-bottom: 4px solid #CC0000; /* Red Accent */
 }
 
-header h1 {
-    font-size: 2.5rem;
+header a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+header a:hover {
+    color: #CC0000;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
 }
 
 nav {
-    border-top: 2px solid #e63946; /* Red */
-    border-bottom: 2px solid #e63946;
-    background: #fff;
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li {
-    border-right: 1px solid #1a1a1a;
+nav li {
+    border-bottom: 1px solid #000000;
 }
 
-nav ul li:last-child {
-    border-right: none;
-}
-
-nav ul li a {
+nav a {
     display: block;
-    padding: 10px 20px;
+    padding: 1em;
     text-decoration: none;
-    color: #1a1a1a;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: background 0.3s;
+    color: #000000;
 }
 
-nav ul li a:hover {
-    background-color: #e63946;
-    color: #fff;
+nav a:visited {
+    color: #333333;
 }
 
-/* Hero Section */
-.hero {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+nav a:hover {
+    color: #CC0000;
 }
 
-.image-placeholder {
-    width: 100%;
-    height: 500px;
-    background-color: #fff;
-    border: 3px solid #e63946;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1a1a1a;
-    font-size: 2rem;
-    font-weight: bold;
+#homehero {
+    height: 300px;
+    background-image: url(grappling_hero.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-/* Grid Section */
-.info-grid {
-    max-width: 1200px;
-    margin: 20px auto;
+main {
+    padding: 1em;
+    display: block;
+}
+
+h2 {
+    color: #CC0000; /* Red */
+}
+
+h3 {
+    color: #000000; /* Black */
+}
+
+/* The 6-card grid from your drawing */
+#info-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: 1fr; /* Stacked on mobile */
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .card {
-    background-color: #fff;
-    color: #1a1a1a;
-    padding: 20px;
-    border-radius: 4px;
-    border-bottom: 5px solid #e63946;
-    min-height: 150px;
-    transition: transform 0.2s;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-top: 4px solid #CC0000;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
-
-.line {
-    width: 30px;
-    height: 3px;
-    background-color: #e63946;
-    margin-top: 15px;
-}
-
-/* Footer */
 footer {
-    background-color: #000;
+    font-size: 0.75em;
+    font-style: italic;
     text-align: center;
-    padding: 20px;
-    border-top: 1px solid #e63946;
-    margin-top: 40px;
+    padding: 1em;
+    background-color: #FFFFFF;
 }
 
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-    
+/* Tablet View */
+@media (min-width: 600px) {
     nav ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+    nav li {
+        border-bottom: none;
+    }
+    nav {
+        padding: 0.5em 0; 
+    }
+    #info-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    }
+}
+
+/* Desktop View (Grid Layout) */
+@media (min-width: 1024px) {
+    #wrapper {
+        background-color: #000000; /* Dark border area */
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid #000000;
+        box-shadow: 3px 3px 3px #333333;
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-template-areas:
+            "header header"
+            "nav hero"
+            "nav main"
+            ". footer";
+    }
+
+    header { grid-area: header; }
+    nav    { grid-area: nav; text-align: left; padding-left: 1em; background-color: #FFFFFF;}
+    main   { grid-area: main; background-color: #FFFFFF; }
+    #homehero { 
+        grid-area: hero; 
+        margin: 0;
+    }
+    #info-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop per drawing */
+    }
+    footer {
+        grid-area: footer;
+        background-color: #FFFFFF;
+        padding: 10px;
+        margin: 0;
+    }
+    nav ul {
+        display: flex;
         flex-direction: column;
+    }
+    nav li {
+        padding: 0.5em 0;
     }
 }
