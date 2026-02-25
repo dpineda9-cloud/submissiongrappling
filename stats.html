@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Submission Grappling | No-Gi Stats</title>
+    <title>Submission Grappling | Techniques</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="grappling.css">
 </head>
@@ -15,8 +15,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="techniques.html">Techniques</a></li>
-                <li><a href="stats.html" class="active">Competition Data</a></li>
+                <li><a href="techniques.html" class="active">Techniques</a></li>
+                <li><a href="stats.html">Competition Data</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -24,94 +24,41 @@
         <div id="homehero"></div>
 
         <main>
-            <h2>No-Gi Competition Analytics</h2>
-            <p>Data drives decisions. The following statistics are compiled from major No-Gi tournaments including ADCC, WNO, and EBI Overtime rounds.</p>
-            
-            <h3>Highest Percentage Chokes (No-Gi Only)</h3>
-            <p>Without the friction of the kimono, head-and-arm strangles dominate the submission landscape alongside the Rear Naked Choke.</p>
+            <h2>No-Gi Technique Library</h2>
+            <p>Explore our curated list of high-percentage No-Gi submissions. Visual learning is key to mastering these complex movements.</p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Technique Name</th>
-                        <th>Type</th>
-                        <th>Success Rate</th>
-                        <th>Position</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Rear Naked Choke (RNC)</td>
-                        <td>Strangle</td>
-                        <td>48.2%</td>
-                        <td>Back Control</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Guillotine Choke</td>
-                        <td>Air/Blood</td>
-                        <td>16.5%</td>
-                        <td>Front Headlock</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>D'Arce Choke</td>
-                        <td>Arm Triangle</td>
-                        <td>11.3%</td>
-                        <td>Side/Turtle</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Inside Heel Hook*</td>
-                        <td>Joint Lock</td>
-                        <td>9.8%</td>
-                        <td>Leg Entanglement</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Triangle Choke</td>
-                        <td>Blood Choke</td>
-                        <td>5.4%</td>
-                        <td>Guard</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Anaconda Choke</td>
-                        <td>Arm Triangle</td>
-                        <td>3.1%</td>
-                        <td>Front Headlock</td>
-                    </tr>
-                </tbody>
-            </table>
+            <section id="info-grid">
+                
+                <div class="card">
+                    <h3>1. Rear Naked Choke (RNC)</h3>
+                    <img src="rnc.gif" alt="RNC Animation" style="width:100%; height:auto; border:1px solid #ddd;">
+                    <p><strong>Type:</strong> Blood Choke<br>
+                    The king of submissions. Constricts the carotid arteries from back control.</p>
+                    <div class="red-line"></div>
+                </div>
 
-            <p><em>*Note: While not a choke, the Heel Hook is included for context as a top-3 No-Gi finisher.</em></p>
-            
-            <hr style="margin: 2em 0; border: 0; border-top: 2px solid #CC0000;">
+                <div class="card">
+                    <h3>2. Triangle Choke</h3>
+                    <img src="triangle.gif" alt="Triangle Animation" style="width:100%; height:auto; border:1px solid #ddd;">
+                    <p><strong>Type:</strong> Blood Choke<br>
+                    Uses your legs to strangle the opponent by trapping their arm and neck.</p>
+                    <div class="red-line"></div>
+                </div>
 
-            <h3>See the Data in Action</h3>
-            <p>Watch these high-percentage moves applied in real competition settings (ADCC Highlights).</p>
-            
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border: 2px solid #000;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                src="https://www.youtube.com/embed/yPjIPeOqrhA" 
-                title="ADCC Submission Highlights" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
-            </div>
+                <div class="card">
+                    <h3>3. Guillotine Choke</h3>
+                    <img src="guillotine.gif" alt="Guillotine Animation" style="width:100%; height:auto; border:1px solid #ddd;">
+                    <p><strong>Type:</strong> Air/Blood Choke<br>
+                    A powerful front headlock attack effective when an opponent shoots for a takedown.</p>
+                    <div class="red-line"></div>
+                </div>
 
-            <div id="contact">
-                <span class="brand">Submission Grappling HQ</span><br>
-                123 Mat Room Lane<br>
-                Combat City, CA 90001
-            </div>
-        </main>
-        
-        <footer>
-            Copyright &copy; 2026 Submission Grappling<br>
-            <a href="mailto:dpineda9@asu.edu">dpineda9@asu.edu</a>
-        </footer>
-    </div>
-</body>
-</html>
+                <div class="card">
+                    <h3>4. Arm Triangle</h3>
+                    <img src="armtriangle.gif" alt="Arm Triangle Animation" style="width:100%; height:auto; border:1px solid #ddd;">
+                    <p><strong>Type:</strong> Blood Choke<br>
+                    Requires passing the guard. Uses shoulder pressure to cut off blood flow.</p>
+                    <div class="red-line"></div>
+                </div>
+
+                <div
