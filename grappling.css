@@ -1,5 +1,3 @@
-
-
 * {
     box-sizing: border-box;
 }
@@ -14,7 +12,7 @@ body {
 #wrapper {
     background-color: #FFFFFF;
     width: 100%;
-    margin: 0;
+    margin: 0 auto; /* Centers the wrapper */
 }
 
 header {
@@ -41,21 +39,24 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Navigation Styling */
+/* Navigation Styling - Mobile First (Vertical Stack) */
 nav {
     font-weight: bold;
     background-color: #f4f4f4;
     text-align: center;
+    border-bottom: 4px solid #CC0000; /* Red line under tabs */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
 }
 
 nav li {
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #ddd;
 }
 
 nav a {
@@ -63,6 +64,7 @@ nav a {
     padding: 1em;
     text-decoration: none;
     color: #000000;
+    transition: 0.3s;
 }
 
 nav a:hover {
@@ -70,7 +72,13 @@ nav a:hover {
     color: #FFFFFF;
 }
 
-/* Hero Section using your Grappling image */
+/* Active Tab Style */
+nav a.active {
+    background-color: #CC0000;
+    color: #FFFFFF;
+}
+
+/* Hero Section */
 #homehero {
     height: 450px;
     background-color: #111111;
@@ -83,15 +91,17 @@ nav a:hover {
 
 main {
     padding: 1.5em;
+    max-width: 1200px; /* Prevents text from getting too wide on huge screens */
+    margin: 0 auto;
 }
 
 h2 { color: #CC0000; }
 .brand { color: #CC0000; font-weight: bold; }
 
-/* 6-Card Grid Layout from Sketch */
+/* Grid Layout for Cards */
 #info-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Default mobile view */
+    grid-template-columns: 1fr;
     gap: 20px;
     margin: 2em 0;
 }
@@ -117,10 +127,28 @@ h2 { color: #CC0000; }
     margin-top: 10px;
 }
 
-#contact {
-    font-size: 0.9em;
-    font-style: italic;
-    margin-top: 2em;
+/* Table Styles for Stats Page */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2em;
+    border: 2px solid #000;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
 footer {
@@ -130,44 +158,42 @@ footer {
     padding: 2em;
     background-color: #000000;
     color: #FFFFFF;
+    margin-top: 2em;
 }
 
 footer a { color: #CC0000; text-decoration: none; }
 
-/* Media Query for Tablet View */
+#contact {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 2em;
+}
+
+/* TABLET VIEW: Make Tabs Horizontal */
 @media (min-width: 600px) {
     nav ul {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
+        flex-direction: row; /* Makes tabs horizontal */
+        justify-content: center; /* Centers tabs */
     }
-    nav li { border-bottom: none; }
+    
+    nav li {
+        border-bottom: none;
+        flex-grow: 1; /* Tabs stretch to fill space */
+        max-width: 200px; /* Prevents them from getting too huge */
+    }
+
     #info-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Media Query for Desktop View (Advanced Grid) */
+/* DESKTOP VIEW: Center Content, Keep Tabs at Top */
 @media (min-width: 1024px) {
     #wrapper {
-        width: 85%;
-        margin: 20px auto;
-        border: 2px solid #000000;
-        box-shadow: 5px 5px 15px #333333;
-        display: grid;
-        grid-template-columns: 200px auto;
-        grid-template-areas:
-            "header header"
-            "nav hero"
-            "nav main"
-            "nav footer";
+        width: 85%; /* Constrain width so it looks professional */
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.5); /* Drop shadow for "boxed" look */
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
-    header { grid-area: header; }
-    nav    { grid-area: nav; text-align: left; padding: 1em; border-right: 1px solid #000; background-color: #FFFFFF; }
-    main   { grid-area: main; background-color: #FFFFFF; }
-    #homehero { grid-area: hero; }
-    footer { grid-area: footer; }
-
-    nav ul { flex-direction: column; }
-    nav li { border-bottom: 1px solid #f4f4f4; }
-    #info-grid { grid-template-columns: repeat(3, 1fr); } /* 3 Columns like the sketch */
+    /* 3 Column Grid for Content */
+    #info-grid { grid-template-columns: repeat(3, 1fr); }
 }
